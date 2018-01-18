@@ -1,0 +1,27 @@
+<div class="login-centered">
+  <div class="ui middle aligned center aligned grid">
+    <div class="column">
+      <img src="../../assets/images/logo.png" class="image">
+      <form class="ui large form" [name]="loginForm" (ng-submit)="onLoginSubmit">
+        <div class="ui stacked segment">
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <input name="email" placeholder="E-mail address" type="text">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input name="password" placeholder="Password" type="password">
+            </div>
+          </div>
+          <div class="ui fluid large teal submit button">Login</div>
+        </div>
+
+        <div class="ui error message"></div>
+
+      </form>
+    </div>
+  </div>
+</div>
