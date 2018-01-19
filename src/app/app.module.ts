@@ -6,6 +6,18 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './view/pages/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './view/pages/home/home.component';
+import { ApiModule, Configuration } from './library/api';
+
+export function apiConfig() {
+  return new Configuration({
+    username: '...',
+    password: '...',
+    basePath: 'localhost:50000',
+    withCredentials: false
+  });
+}
+
+apiConfig().selectHeaderContentType(['application/json']);
 
 @NgModule({
   declarations: [
@@ -15,9 +27,9 @@ import { HomeComponent } from './view/pages/home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ApiModule.forRoot(apiConfig)
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
