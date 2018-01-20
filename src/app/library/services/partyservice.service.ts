@@ -5,5 +5,4 @@ export class PartyserviceService {
 
   constructor() { }
 
-  getAllPartiesWithColor() {}
 }

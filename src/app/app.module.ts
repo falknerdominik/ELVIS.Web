@@ -7,12 +7,14 @@ import { LoginComponent } from './view/pages/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './view/pages/home/home.component';
 import { ApiModule, Configuration } from './library/api';
+import { FormsModule } from "@angular/forms";
+import { AuthentificationServiceService } from './library/services/authentification-service.service';
+import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from './view/components/menu/menu.component';
 
 export function apiConfig() {
   return new Configuration({
-    username: '...',
-    password: '...',
-    basePath: 'localhost:50000',
+    basePath: 'http://localhost:50000',
     withCredentials: false
   });
 }
@@ -23,13 +25,17 @@ apiConfig().selectHeaderContentType(['application/json']);
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ApiModule.forRoot(apiConfig)
+    ApiModule.forRoot(apiConfig),
+    FormsModule,
+    HttpClientModule
   ],
+  providers: [AuthentificationServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
