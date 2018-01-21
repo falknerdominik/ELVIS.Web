@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './view/components/menu/menu.component';
 import { SettingsService } from './library/services/settings-service.service';
 import { ListComponent } from './view/pages/list/list.component';
+import { AreacardComponent } from './view/components/areacard/areacard.component';
 
 export function apiConfig() {
   return new Configuration({
@@ -29,7 +30,8 @@ apiConfig().selectHeaderContentType(['application/json']);
     LoginComponent,
     HomeComponent,
     MenuComponent,
-    ListComponent
+    ListComponent,
+    AreacardComponent
   ],
   imports: [
     BrowserModule,

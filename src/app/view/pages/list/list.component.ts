@@ -19,17 +19,16 @@ export class ListComponent implements OnInit {
     private route: ActivatedRoute, 
     private areaManager: AreaService,
     private settingsService: SettingsService
-  ) { 
+  ) { }
+
+  ngOnInit() { 
     this.route.queryParams.subscribe(
       param => { 
         this.election = this.settingsService.getSelectedElection()
-        console.log(this.election);
         this.initList(param.area);
       }
     );
   }
-
-  ngOnInit() { }
 
   initList(area: string) {
     this.areas = this.getAreas(area);
@@ -38,8 +37,6 @@ export class ListComponent implements OnInit {
   getAreas(area: string): Observable<Community[]> {
     switch(area) {
       case 'constituencies':
-        console.log("ELECTION: ");
-        console.log(this.election);
         return this.areaManager.getAllConstituencies(this.election.Id);
       case 'districts':
         return this.areaManager.getAllDistricts(this.election.Id);

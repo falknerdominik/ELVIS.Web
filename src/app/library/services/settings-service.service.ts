@@ -8,9 +8,7 @@ import { UserService } from '../api/api/user.service';
 export class SettingsService {
 
   private basekey : string = 'settings';
-  constructor(private electionService: ElectionService, private userService: UserService) {
-    this.reset();
-  }
+  constructor(private electionService: ElectionService, private userService: UserService) { }
 
   reset() {
     sessionStorage.clear();
