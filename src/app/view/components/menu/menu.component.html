@@ -1,7 +1,7 @@
 <div class="ui large top hidden menu">
   <div class="ui container">
-    <a [class.active]="router.url == '/home'" class="item">Home</a>
-    <a [class.active]="router.url == '/overview'" class="item">Gesamt</a>
+    <a [routerLink]="['/home']" [class.active]="router.url == '/home'" class="item">Home</a>
+    <a [routerLink]="['/overview']" [class.active]="router.url == '/overview'" class="item">Gesamt</a>
     <a [routerLink]="['/list']" [queryParams]="{area: 'constituencies'}" [class.active]="action == 'constituencies'" class="item">Wahlkreis</a>
     <a [routerLink]="['/list']" [queryParams]="{area: 'provinces'}" [class.active]="action == 'provinces'" class="item">Bezirk</a>
     <a [routerLink]="['/list']" [queryParams]="{area: 'districts'}" [class.active]="action == 'districts'" class="item">Region</a>

@@ -12,6 +12,6 @@
 
 
 export interface KeyValuePairStringInt32 {
-    key?: string;
-    value?: number;
+    Key?: string;
+    Value?: number;
 }

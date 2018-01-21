@@ -27,13 +27,9 @@ export class ListComponent implements OnInit {
       param => { 
         this.election = this.settingsService.getSelectedElection()
         this.areaType = param.area;
-        this.initList(param.area);
+        this.areas = this.getAreas(param.area);
       }
     );
-  }
-
-  initList(area: string) {
-    this.areas = this.getAreas(area);
   }
 
   getAreas(area: string): Observable<Community[]> {
@@ -47,7 +43,6 @@ export class ListComponent implements OnInit {
       case 'communities':
         return this.areaManager.getAllCommunities(this.election.Id);
       default:
-        null;
         break;
     }
   }

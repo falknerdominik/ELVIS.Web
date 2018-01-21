@@ -9,8 +9,8 @@ import { DetailComponent } from './view/pages/detail/detail.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'list', component: ListComponent }
-  { path: 'overview', component: OverviewComponent }
+  { path: 'list', component: ListComponent },
+  { path: 'overview', component: OverviewComponent },
   { path: 'detail', component: DetailComponent }
 ];
 

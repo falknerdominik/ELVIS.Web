@@ -17,6 +17,12 @@ import { AreacardComponent } from './view/components/areacard/areacard.component
 import { MandatRayComponent } from './view/components/mandat-ray/mandat-ray.component';
 import { DetailComponent } from './view/pages/detail/detail.component';
 
+import * as FusionCharts from 'fusioncharts';
+import * as Charts from 'fusioncharts/fusioncharts.charts';
+import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
+import { FusionChartsModule } from 'angular4-fusioncharts';
+import { OverviewComponent } from './view/pages/overview/overview.component';
+
 export function apiConfig() {
   return new Configuration({
     basePath: 'http://localhost:50000',
@@ -35,14 +41,16 @@ apiConfig().selectHeaderContentType(['application/json']);
     ListComponent,
     AreacardComponent,
     MandatRayComponent,
-    DetailComponent
+    DetailComponent,
+    OverviewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ApiModule.forRoot(apiConfig),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FusionChartsModule.forRoot(FusionCharts, Charts, FintTheme)
   ],
   providers: [AuthentificationService, SettingsService],
   bootstrap: [AppComponent]

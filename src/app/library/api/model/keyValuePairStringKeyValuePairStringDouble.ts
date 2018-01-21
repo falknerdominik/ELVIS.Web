@@ -13,6 +13,6 @@ import { KeyValuePairStringDouble } from './keyValuePairStringDouble';
 
 
 export interface KeyValuePairStringKeyValuePairStringDouble {
-    key?: string;
+    Key?: string;
     Value?: KeyValuePairStringDouble;
 }

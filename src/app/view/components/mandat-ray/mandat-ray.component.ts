@@ -41,6 +41,11 @@ export class MandatRayComponent implements OnInit {
           r => this.partyResults = r.filter(p => p.Value.Value > 4.0)
         );
         break;
+      case 'federal':
+        this.resultService.relativeFederalResultWithColor(this.election.Id, this.area.FederalId).subscribe(
+          r => this.partyResults = r.filter(p => p.Value.Value > 4.0)
+        );
+        break;
       default:
         break;
     }
