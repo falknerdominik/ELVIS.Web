@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SettingsService } from '../../../library/services/settings-service.service';
+import { User } from '../../../library/api/index';
 
 @Component({
   selector: 'menu',
@@ -8,7 +10,11 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  user: User;
+
+  constructor(private router: Router, private settingsService: SettingsService) { 
+    this.user = this.settingsService.getUser();
+  }
 
   ngOnInit() {
   }

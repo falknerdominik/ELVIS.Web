@@ -8,9 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './view/pages/home/home.component';
 import { ApiModule, Configuration } from './library/api';
 import { FormsModule } from "@angular/forms";
-import { AuthentificationServiceService } from './library/services/authentification-service.service';
+import { AuthentificationService } from './library/services/authentification-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './view/components/menu/menu.component';
+import { SettingsService } from './library/services/settings-service.service';
 
 export function apiConfig() {
   return new Configuration({
@@ -35,7 +36,7 @@ apiConfig().selectHeaderContentType(['application/json']);
     FormsModule,
     HttpClientModule
   ],
-  providers: [AuthentificationServiceService],
+  providers: [AuthentificationService, SettingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
