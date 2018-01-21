@@ -23,6 +23,7 @@ import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
 import { FusionChartsModule } from 'angular4-fusioncharts';
 import { OverviewComponent } from './view/pages/overview/overview.component';
 import { ResultchartComponent } from './view/components/resultchart/resultchart.component';
+import { SettingsComponent } from './view/pages/settings/settings.component';
 
 export function apiConfig() {
   return new Configuration({
@@ -44,7 +45,8 @@ apiConfig().selectHeaderContentType(['application/json']);
     MandatRayComponent,
     DetailComponent,
     OverviewComponent,
-    ResultchartComponent
+    ResultchartComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

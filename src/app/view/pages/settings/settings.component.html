@@ -1,0 +1,4 @@
+<label>Gib deine Heimatgemeinde an.</label>
+<select class="ui search dropdown" [(ngModel)]='selectedArea' (ngModelChange)='areasSelected($event)'>
+  <option *ngFor="let area of areas | async" [value]="area.AreaId">{{area.Name}}</option>
+</select>

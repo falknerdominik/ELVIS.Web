@@ -16,7 +16,7 @@ export interface Community {
     provinceId?: number;
     constituencyId?: number;
     districtId?: number;
-    communityId?: number;
+    CommunityId?: number;
     name?: string;
     areaId?: string;
 }

@@ -3,6 +3,7 @@ import { ElectionService } from './../api/api/election.service';
 import { User } from './../api/model/user';
 import { Election } from './../api/model/election';
 import { UserService } from '../api/api/user.service';
+import { Community } from '../api/index';
 
 @Injectable()
 export class SettingsService {
@@ -27,6 +28,16 @@ export class SettingsService {
   }
 
   setUser(user: User) {
-    return sessionStorage.setItem(`${this.basekey}-user`, JSON.stringify(user));
+    sessionStorage.setItem(`${this.basekey}-user`, JSON.stringify(user));
+  }
+
+  setUserDefinedCommunity(community: string) {
+    const user = this.getUser();
+    localStorage.setItem(`${this.basekey}-user-${user.Username}-home`, community);
+  }
+
+  getUserDefinedCommunity() : string {
+    const user = this.getUser();
+    return localStorage.getItem(`${this.basekey}-user-${user.Username}-home`);
   }
 }

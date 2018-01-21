@@ -12,7 +12,7 @@
 
 
 export interface User {
-    username?: string;
+    Username?: string;
     email?: string;
     firstname?: string;
     lastname?: string;
