@@ -32,7 +32,7 @@ export class ResultchartComponent implements OnInit {
 
   ngOnInit() {
     this.area.subscribe(
-      area => {
+      a => {
         this.dataSource = {
             "chart": this.chart,
             "data": this.data
@@ -40,27 +40,27 @@ export class ResultchartComponent implements OnInit {
 
         switch(this.areaType) {
           case 'constituencies':
-            this.resultService.relativeConstituencyResultWithColor(this.election.Id, area.ConstituencyId).subscribe(
+            this.resultService.relativeConstituencyResultWithColor(this.election.Id, a.ConstituencyId).subscribe(
               r => r.forEach(p => this.data.push({"label": p.Value.Key, "value": Number(p.Value.Value).toFixed(2), "color": p.Key}))
             );
             break;
           case 'districts':
-            this.resultService.relativeDistrictResultWithColor(this.election.Id, area.DistrictId).subscribe(
+            this.resultService.relativeDistrictResultWithColor(this.election.Id, a.DistrictId).subscribe(
               r => r.forEach(p => this.data.push({"label": p.Value.Key, "value": Number(p.Value.Value).toFixed(2), "color": p.Key}))
             );
             break;
           case 'provinces':
-            this.resultService.relativeProvinceResultWithColor(this.election.Id, area.FederalId, area.ProvinceId).subscribe(
+            this.resultService.relativeProvinceResultWithColor(this.election.Id, a.FederalId, a.ProvinceId).subscribe(
               r => r.forEach(p => this.data.push({"label": p.Value.Key, "value": Number(p.Value.Value).toFixed(2), "color": p.Key}))
             );
             break;
           case 'communities':
-            this.resultService.relativeDistrictResultWithColor(this.election.Id, area.DistrictId).subscribe(
+            this.resultService.relativeCommunityResultWithColor(this.election.Id, a.CommunityId).subscribe(
               r => r.forEach(p => this.data.push({"label": p.Value.Key, "value": Number(p.Value.Value).toFixed(2), "color": p.Key}))
             );
             break;
           case 'federal':
-            this.resultService.relativeFederalResultWithColor(this.election.Id, area.FederalId).subscribe(
+            this.resultService.relativeFederalResultWithColor(this.election.Id, a.FederalId).subscribe(
               r => r.forEach(p => this.data.push({"label": p.Value.Key, "value": Number(p.Value.Value).toFixed(2), "color": p.Key}))
             );
             break;

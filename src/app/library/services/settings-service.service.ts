@@ -15,7 +15,7 @@ export class SettingsService {
     this.electionService.getElectionById(1).subscribe(
       election => sessionStorage.setItem(`${this.basekey}-selectedelection`, JSON.stringify(election))
     )
-    sessionStorage.setItem(`${this.basekey}-user`, JSON.stringify({"Username":"Guest","Email":"guest@gmail.com","Firstname":"Guest","Lastname":"Not Logged In","UserType":1}));
+    sessionStorage.setItem(`${this.basekey}-user`, JSON.stringify({"Username":"Guest","Email":"guest@gmail.com","Firstname":"Dominik","Lastname":"Not Logged In","UserType":1}));
   }
 
   getSelectedElection() : Election {

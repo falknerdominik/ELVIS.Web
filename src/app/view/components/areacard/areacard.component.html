@@ -5,7 +5,7 @@
     <mandat-ray [area]="area" [areaType]="areaType"></mandat-ray>
   </div>
 </div>
-<div class="ui bottom attached button">
+<a  [routerLink]="['/detail']" [queryParams]="{area: areaType, id: area.AreaId}" class="ui bottom attached button">
   <i class="find icon"></i>
   Reinschauen
-</div>
+</a>

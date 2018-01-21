@@ -12,14 +12,14 @@ import { Observable } from 'rxjs/Observable';
 })
 export class MenuComponent implements OnInit {
   action: any;
-
   user: User;
 
   constructor(private router: Router, private settingsService: SettingsService, private route: ActivatedRoute) { 
-    this.user = this.settingsService.getUser();
-    console.log(router.url);
     this.route.queryParams.subscribe(
-      p => this.action = p.area
+      p => {
+        this.action = p.area
+        this.user = this.settingsService.getUser();
+      }
     );
   }
 

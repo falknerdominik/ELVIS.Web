@@ -8,14 +8,19 @@ import { MenuComponent } from '../../components/menu/menu.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  area;
+  areaType: string = 'communities'
+  chart: any = {
+    "caption": `Stimmenverteilung`,
+    "numberprefix": "",
+    "theme": "fint"
+  }
 
-  constructor() { 
-// private areaService: AreaService, private electionService: ElectionService
-    // electionService.getAllParties().subscribe(
-    //   x => console.log(x),
-    //   e => console.log(e),
-    //   () => console.log("completed")
-    // )
+  constructor(areaService: AreaService) { 
+    this.area = areaService.community(1);
+    this.area.subscribe(
+      a => this.chart.caption = `Stimmenverteilung ${a.Name}`
+    );
   }
 
   ngOnInit() { }
