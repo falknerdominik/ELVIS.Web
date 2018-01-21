@@ -12,6 +12,7 @@ import { AuthentificationService } from './library/services/authentification-ser
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './view/components/menu/menu.component';
 import { SettingsService } from './library/services/settings-service.service';
+import { ListComponent } from './view/pages/list/list.component';
 
 export function apiConfig() {
   return new Configuration({
@@ -27,7 +28,8 @@ apiConfig().selectHeaderContentType(['application/json']);
     AppComponent,
     LoginComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
