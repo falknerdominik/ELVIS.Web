@@ -7,6 +7,7 @@ import { OverviewComponent } from './view/pages/overview/overview.component';
 import { DetailComponent } from './view/pages/detail/detail.component';
 import { SettingsComponent } from './view/pages/settings/settings.component';
 import { IsloggedinGuard } from './library/guards/isloggedin.guard';
+import { MandatsComponent } from './view/pages/mandats/mandats.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'list', component: ListComponent, canActivate: [IsloggedinGuard] },
   { path: 'overview', component: OverviewComponent, canActivate: [IsloggedinGuard] },
   { path: 'detail', component: DetailComponent, canActivate: [IsloggedinGuard] },
-  { path: 'settings', component: SettingsComponent, canActivate: [IsloggedinGuard] }
+  { path: 'settings', component: SettingsComponent, canActivate: [IsloggedinGuard] },
+  { path: 'mandats', component: MandatsComponent, canActivate: [IsloggedinGuard] }
 ];
 
 @NgModule({

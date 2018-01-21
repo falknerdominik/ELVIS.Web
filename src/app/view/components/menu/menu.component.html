@@ -2,20 +2,21 @@
   <div class="ui container">
     <a [routerLink]="['/home']" [class.active]="router.url == '/home'" class="item">Home</a>
     <a [routerLink]="['/overview']" [class.active]="router.url == '/overview'" class="item">Gesamt</a>
+    <a [routerLink]="['/mandats']" [class.active]="router.url == '/mandats'" class="item">Mandate</a>
     <a [routerLink]="['/list']" [queryParams]="{area: 'constituencies'}" [class.active]="action == 'constituencies'" class="item">Wahlkreis</a>
     <a [routerLink]="['/list']" [queryParams]="{area: 'provinces'}" [class.active]="action == 'provinces'" class="item">Bezirk</a>
     <a [routerLink]="['/list']" [queryParams]="{area: 'districts'}" [class.active]="action == 'districts'" class="item">Region</a>
-    <a [routerLink]="['/list']" [queryParams]="{area: 'communities'}" [class.active]="action == '/community'" class="item">Gemeinde</a>
+    <a [routerLink]="['/list']" [queryParams]="{area: 'communities'}" [class.active]="action == 'community'" class="item">Gemeinde</a>
     <div class="right menu">
       <div class="item">
-        <a [routerLink]="['/settings']" [class.active]="router.url == '/settings'" class="ui button"><i class="wrench icon"></i>{{user.Firstname}}</a>
+        <a [routerLink]="['/settings']" [class.active]="router.url == 'settings'" class="ui button"><i class="wrench icon"></i>{{user.Firstname}}</a>
       </div>
-    <div class="ui right aligned category search item">
+    <!-- <div class="ui right aligned category search item">
       <div class="ui transparent icon input">
         <input class="prompt" placeholder="Suche..." type="text">
         <i class="search link icon"></i>
       </div>
       <div class="results"></div>
-    </div>
+    </div> -->
   </div>
 </div>

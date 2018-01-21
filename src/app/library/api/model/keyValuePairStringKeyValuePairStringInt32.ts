@@ -13,6 +13,6 @@ import { KeyValuePairStringInt32 } from './keyValuePairStringInt32';
 
 
 export interface KeyValuePairStringKeyValuePairStringInt32 {
-    key?: string;
-    value?: KeyValuePairStringInt32;
+    Key?: string;
+    Value?: KeyValuePairStringInt32;
 }

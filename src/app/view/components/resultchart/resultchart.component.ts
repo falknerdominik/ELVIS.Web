@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ResultService, AreaService } from '../../../library/api/index';
+import { ResultService, AreaService, MandatsService } from '../../../library/api/index';
 import { SettingsService } from '../../../library/services/settings-service.service';
 
 @Component({
@@ -24,7 +24,8 @@ export class ResultchartComponent implements OnInit {
   constructor(
     private resultService: ResultService,
     private settingsService: SettingsService,
-    private areaService: AreaService
+    private areaService: AreaService,
+    private mandatService: MandatsService
   ) { 
     this.election = settingsService.getSelectedElection();
     this.data = [];
@@ -62,6 +63,13 @@ export class ResultchartComponent implements OnInit {
           case 'federal':
             this.resultService.relativeFederalResultWithColor(this.election.Id, a.FederalId).subscribe(
               r => r.forEach(p => this.data.push({"label": p.Value.Key, "value": Number(p.Value.Value).toFixed(2), "color": p.Key}))
+            );
+            break;
+          case 'mandats':
+            this.mandatService.mandatWithColor(this.election.Id, a.FederalId).subscribe(
+              r => r.forEach(p => {
+                if(p.Value.Value > 0) this.data.push({"label": p.Value.Key, "value": Number(p.Value.Value).toFixed(2), "color": p.Key})
+            })
             );
             break;
           default:
