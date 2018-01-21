@@ -14,5 +14,5 @@ import { KeyValuePairStringDouble } from './keyValuePairStringDouble';
 
 export interface KeyValuePairStringKeyValuePairStringDouble {
     key?: string;
-    value?: KeyValuePairStringDouble;
+    Value?: KeyValuePairStringDouble;
 }

@@ -14,6 +14,7 @@ export class ListComponent implements OnInit {
 
   private election: Election;
   private areas: any;
+  private areaType: string = '';
 
   constructor(
     private route: ActivatedRoute, 
@@ -25,6 +26,7 @@ export class ListComponent implements OnInit {
     this.route.queryParams.subscribe(
       param => { 
         this.election = this.settingsService.getSelectedElection()
+        this.areaType = param.area;
         this.initList(param.area);
       }
     );

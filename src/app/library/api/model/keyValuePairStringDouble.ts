@@ -13,5 +13,5 @@
 
 export interface KeyValuePairStringDouble {
     key?: string;
-    value?: number;
+    Value?: number;
 }

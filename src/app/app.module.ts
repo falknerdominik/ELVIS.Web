@@ -14,6 +14,7 @@ import { MenuComponent } from './view/components/menu/menu.component';
 import { SettingsService } from './library/services/settings-service.service';
 import { ListComponent } from './view/pages/list/list.component';
 import { AreacardComponent } from './view/components/areacard/areacard.component';
+import { MandatRayComponent } from './view/components/mandat-ray/mandat-ray.component';
 
 export function apiConfig() {
   return new Configuration({
@@ -31,7 +32,8 @@ apiConfig().selectHeaderContentType(['application/json']);
     HomeComponent,
     MenuComponent,
     ListComponent,
-    AreacardComponent
+    AreacardComponent,
+    MandatRayComponent
   ],
   imports: [
     BrowserModule,

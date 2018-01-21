@@ -1,0 +1,25 @@
+.mandatray {
+    width: 100%;
+    height: 50;
+    backgound-color: gray;
+    display: flex;
+    justify-content: center;
+}
+  
+.segment {
+height: 100%;
+color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 1em;
+}
+
+.segment span {
+    padding: 10px;
+}
