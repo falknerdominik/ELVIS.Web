@@ -2,10 +2,10 @@
   <div class="ui container">
     <a [class.active]="router.url == '/home'" class="item">Home</a>
     <a [class.active]="router.url == '/overview'" class="item">Gesamt</a>
-    <a [routerLink]="['/list']" [queryParams]="{area: 'constituencies'}" [class.active]="router.url == '/constitiuency'" class="item">Wahlkreis</a>
-    <a [routerLink]="['/list']" [queryParams]="{area: 'provinces'}" [class.active]="router.url == '/province'" class="item">Bundesland</a>
-    <a [routerLink]="['/list']" [queryParams]="{area: 'districts'}" [class.active]="router.url == '/district'" class="item">Bezirk</a>
-    <a [routerLink]="['/list']" [queryParams]="{area: 'communities'}" [class.active]="router.url == '/community'" href="www.google.at" class="item">Gemeinde</a>
+    <a [routerLink]="['/list']" [queryParams]="{area: 'constituencies'}" [class.active]="action == 'constituencies'" class="item">Wahlkreis</a>
+    <a [routerLink]="['/list']" [queryParams]="{area: 'provinces'}" [class.active]="action == 'provinces'" class="item">Bezirk</a>
+    <a [routerLink]="['/list']" [queryParams]="{area: 'districts'}" [class.active]="action == 'districts'" class="item">Region</a>
+    <a [routerLink]="['/list']" [queryParams]="{area: 'communities'}" [class.active]="action == '/community'" class="item">Gemeinde</a>
     <div class="right menu">
       <div class="item">
         <a class="ui button"><i class="wrench icon"></i>{{user.Firstname}}</a>
