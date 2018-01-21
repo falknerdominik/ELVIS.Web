@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router/src/router';
+import { ActivatedRoute } from '@angular/router';
+import { AreaService, Election, Community } from '../../../library/api/index';
+import { SettingsService } from '../../../library/services/settings-service.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +12,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  private election: Election;
+  private areas: any;
 
-  ngOnInit() {
+  constructor(
+    private route: ActivatedRoute, 
+    private areaManager: AreaService,
+    private settingsService: SettingsService
+  ) { 
+    this.route.queryParams.subscribe(
+      param => { 
+        this.election = this.settingsService.getSelectedElection()
+        console.log(this.election);
+        this.initList(param.area);
+      }
+    );
   }
 
+  ngOnInit() { }
+
+  initList(area: string) {
+    this.areas = this.getAreas(area);
+  }
+
+  getAreas(area: string): Observable<Community[]> {
+    switch(area) {
+      case 'constituencies':
+        console.log("ELECTION: ");
+        console.log(this.election);
+        return this.areaManager.getAllConstituencies(this.election.Id);
+      case 'districts':
+        return this.areaManager.getAllDistricts(this.election.Id);
+      case 'provinces':
+        return this.areaManager.getAllProvinces(this.election.Id);
+      case 'communities':
+        return this.areaManager.getAllCommunities(this.election.Id);
+      default:
+        null;
+        break;
+    }
+  }
 }

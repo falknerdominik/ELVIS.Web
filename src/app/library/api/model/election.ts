@@ -12,7 +12,7 @@
 
 
 export interface Election {
-    id?: number;
+    Id?: number;
     name?: string;
     mandats?: number;
     year?: number;

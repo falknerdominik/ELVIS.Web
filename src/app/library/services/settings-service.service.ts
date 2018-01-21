@@ -17,15 +17,15 @@ export class SettingsService {
     this.electionService.getElectionById(1).subscribe(
       election => sessionStorage.setItem(`${this.basekey}-selectedelection`, JSON.stringify(election))
     )
-    sessionStorage.setItem(`${this.basekey}-user`, 'guest');
+    sessionStorage.setItem(`${this.basekey}-user`, JSON.stringify({"Username":"Guest","Email":"guest@gmail.com","Firstname":"Guest","Lastname":"Not Logged In","UserType":1}));
   }
 
   getSelectedElection() : Election {
-    return JSON.parse(sessionStorage.getItem(`${this.basekey}-selectedelection`));
+    return JSON.parse(sessionStorage.getItem(`${this.basekey}-selectedelection`)) as Election;
   }
 
   getUser() : User {
-    return JSON.parse(sessionStorage.getItem(`${this.basekey}-user`));
+    return JSON.parse(sessionStorage.getItem(`${this.basekey}-user`)) as User;
   }
 
   setUser(user: User) {
