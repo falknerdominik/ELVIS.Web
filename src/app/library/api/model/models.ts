@@ -2,6 +2,7 @@ export * from './chartModel';
 export * from './community';
 export * from './constituency';
 export * from './district';
+export * from './election';
 export * from './federalLevel';
 export * from './keyValuePairCommunityIListKeyValuePairStringDouble';
 export * from './keyValuePairConstituencyIListKeyValuePairStringDouble';
