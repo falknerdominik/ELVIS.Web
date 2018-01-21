@@ -6,14 +6,15 @@ import { ListComponent } from './view/pages/list/list.component';
 import { OverviewComponent } from './view/pages/overview/overview.component';
 import { DetailComponent } from './view/pages/detail/detail.component';
 import { SettingsComponent } from './view/pages/settings/settings.component';
+import { IsloggedinGuard } from './library/guards/isloggedin.guard';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'list', component: ListComponent },
-  { path: 'overview', component: OverviewComponent },
-  { path: 'detail', component: DetailComponent },
-  { path: 'settings', component: SettingsComponent }
+  { path: '', component: LoginComponent},
+  { path: 'home', component: HomeComponent, canActivate: [IsloggedinGuard] },
+  { path: 'list', component: ListComponent, canActivate: [IsloggedinGuard] },
+  { path: 'overview', component: OverviewComponent, canActivate: [IsloggedinGuard] },
+  { path: 'detail', component: DetailComponent, canActivate: [IsloggedinGuard] },
+  { path: 'settings', component: SettingsComponent, canActivate: [IsloggedinGuard] }
 ];
 
 @NgModule({

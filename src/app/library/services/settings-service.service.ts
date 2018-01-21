@@ -40,4 +40,8 @@ export class SettingsService {
     const user = this.getUser();
     return localStorage.getItem(`${this.basekey}-user-${user.Username}-home`);
   }
+
+  isLoggedIn() : boolean {
+    return this.getUser().Username != 'Guest';
+  }
 }

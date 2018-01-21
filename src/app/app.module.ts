@@ -12,6 +12,7 @@ import { AuthentificationService } from './library/services/authentification-ser
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './view/components/menu/menu.component';
 import { SettingsService } from './library/services/settings-service.service';
+import { IsloggedinGuard } from './library/guards/isloggedin.guard';
 import { ListComponent } from './view/pages/list/list.component';
 import { AreacardComponent } from './view/components/areacard/areacard.component';
 import { MandatRayComponent } from './view/components/mandat-ray/mandat-ray.component';
@@ -56,7 +57,7 @@ apiConfig().selectHeaderContentType(['application/json']);
     HttpClientModule,
     FusionChartsModule.forRoot(FusionCharts, Charts, FintTheme)
   ],
-  providers: [AuthentificationService, SettingsService],
+  providers: [AuthentificationService, SettingsService, IsloggedinGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
