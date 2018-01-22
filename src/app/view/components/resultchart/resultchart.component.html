@@ -5,3 +5,23 @@
     [dataFormat]="dataFormat"
     [dataSource]="dataSource"
 ></fusioncharts>
+<div style='display: flex; justify-content: center;'>
+<table class="ui celled table" style="width: 50%;">
+<thead>
+    <tr>
+        <th>Partei</th>
+        <th>Votes</th>
+    </tr>
+</thead>
+<tbody>
+    <ng-container *ngFor="let party of data" >
+        <tr *ngIf='party?.value > 0'>
+            <td>
+                <div class="ui ribbon label">{{party.label}}</div>
+            </td>
+            <td>{{party.value}}</td>
+        </tr>
+    </ng-container>
+</tbody>
+</table>
+</div>
